@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="PhotoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="srcImage" Grid.Column="0" Grid.Row="0" Stretch="Uniform"/>
+        <Image x:Name="destImage" Grid.Column="1" Grid.Row="0" Stretch="Uniform"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">Source Image</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">Destination Image</TextBlock>
+        <Button Click="{x:Bind OnSelectPhotoAsync}" Content="Select Source..." Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10"></Button>
+        <Button Click="{x:Bind OnSendPhotoAsync}" Content="Send to Destination..." Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10"></Button>
+    </Grid>
+</Page>
